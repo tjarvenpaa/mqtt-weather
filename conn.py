@@ -38,3 +38,6 @@ mqttc.on_subscribe = on_subscribe
 
 # Connect
 mqttc.connect(MQTT_Broker, int(MQTT_Port), int(Keep_Alive_Interval))
+
+# Continue the network loop
+mqttc.loop_forever()
