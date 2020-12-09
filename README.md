@@ -40,3 +40,4 @@ screen python3 /polku/jossa/conn.py
 ```
 
 samassa polussa täytyy olla myös datareader.py, jota conn.py kutsuu käsitelläkseen hakemaansa dataa. 
+Jotta scripti toimii oikein, täytyy datareader.py scriptin lopussa olevat topic muuttuja vaihtaa vastaamaan lähetettäviä tietoja.

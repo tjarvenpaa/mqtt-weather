@@ -6,7 +6,7 @@ from datareader import sensor_Data_Handler
 MQTT_Broker = "iot.research.hamk.fi"
 MQTT_Port = 1883
 Keep_Alive_Interval = 45
-MQTT_Topic = "HAMK/intim19a6/weather/#"
+MQTT_Topic = "HAMK/intip20x6/weather/#"
 
 #Subscribe to all Sensors at Base Topic
 def on_connect(self, mosq, obj, rc):
@@ -22,7 +22,7 @@ def on_message(mosq, obj, msg):
         # This is the Master Call for saving MQTT Data to statsd
         print ("MQTT Data Received...")
         print ("MQTT Topic: " + msg.topic)
-        print ("Data: " + msg.payload)
+        print ("Data: " + str(msg.payload))
         sensor_Data_Handler(msg.topic, msg.payload)
 
 def on_subscribe(mosq, obj, mid, granted_qos):
